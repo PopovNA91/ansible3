@@ -27,6 +27,7 @@
       template:
         src: elasticsearch.yml.j2
         dest: /etc/elasticsearch/elasticsearch.yml
+        mode: 0644
       notify: restart Elasticsearch
 
 - name: Install Kibana
@@ -56,6 +57,7 @@
       template:
         src: kibana.yml.j2
         dest: /etc/kibana/kibana.yml
+        mode: 0644
       notify: restart Kibana
      
 - name: Install filebeat
@@ -86,6 +88,7 @@
       template:
         src: filebeat.yml.j2
         dest: /etc/filebeat/filebeat.yml
+        mode: 0644
       notify: restart Filebeat
     - name: Set filebeat systemwork
       become: true
